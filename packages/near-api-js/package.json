@@ -49,7 +49,7 @@
         "compile": "tsc -p ./tsconfig.json",
         "dev": "pnpm compile -w",
         "build": "pnpm compile && pnpm browserify",
-        "test": "pnpm test:jest && pnpm test:errorsjson",
+        "test": "concurrently \"pnpm:test:*\"",
         "test:jest": "echo 'pass'",
         "test:errorsjson": "node fetch_error_schema.js",
         "lint": "concurrently \"pnpm:lint:*(!fix)\"",
