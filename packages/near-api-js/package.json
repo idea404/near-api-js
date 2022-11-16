@@ -51,7 +51,7 @@
         "build": "pnpm compile && pnpm browserify",
         "test": "concurrently \"pnpm:test:*\"",
         "test:jest": "echo 'pass'",
-        "test:errorsjson": "node fetch_error_schema.js",
+        "test:errorsjson": "node fetch_error_schema.js && git diff --exit-code",
         "lint": "concurrently \"pnpm:lint:*(!fix)\"",
         "lint:src": "eslint --ext .ts src",
         "lint:test": "eslint --ext .js test",
